@@ -8,11 +8,8 @@ void print(int &val){
 }
 
 int main(){
-	vector<int> arr;
-	for(int i=0;i<100;i++)
-		arr.push_back(i);
-	ptr = &arr[0];
-	for(int i=0;i<arr.size();i++)
-		print(arr[i]);
+	int n = 8;
+	n>>1;
+	cout<<n<<endl;
 	return 0;	
 }
