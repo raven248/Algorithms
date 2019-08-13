@@ -20,10 +20,10 @@ void BToDLL(Node* root, Node** head_ref)
     if(root == NULL)
         return;
     BToDLL(root->right, head_ref);
-    root->right = head_ref;
-    if(head_ref)
+    root->right = *head_ref;
+    if(*head_ref)
         (*head_ref)->left = root;
-    head_ref = root;
+    *head_ref = root;
     BToDLL(root->left, head_ref);
 } 
   
@@ -70,7 +70,8 @@ int main()
     root->right->right->left = newNode(7); 
     root->right->right->right = newNode(9); 
   
-    Node* head = NULL; 
+    Node* head = new Node;
+    head = NULL; 
     BToDLL(root, &head); 
   
     printList(head); 
